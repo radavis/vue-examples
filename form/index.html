@@ -1,0 +1,63 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue.js Example</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <div id="app">
+      <h1>Vue.js Form</h1>
+      <form>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" v-model="email" placeholder="">
+        </div>
+        <div>
+          <label for="address">Address</label>
+          <textarea id="address" v-model="address" placeholder=""></textarea>
+        </div>
+        <div>
+          <input id="deploy-tacos" type="checkbox" v-model="deployTacos">
+          <label for="deploy-tacos">Deploy Tacos</label>
+        </div>
+        <div>
+          <input id="artist-1" type="radio" value="Nirvana" v-model="bestArtist">
+          <label for="artist-1">Nirvana</label>
+          <br />
+          <input id="artist-2" type="radio" value="Nine Inch Nails" v-model="bestArtist">
+          <label for="artist-2">Nine Inch Nails</label>
+          <br />
+          <input id="artist-3" type="radio" value="Metallica" v-model="bestArtist">
+          <label for="artist-3">Metallica</label>
+          <br />
+        </div>
+      </form>
+
+      <p>
+        Email: {{ email }}
+      </p>
+      <p>
+        Address: {{ address }}
+      </p>
+      <p>
+        Deploy tacos? {{ deployTacos ? 'Yes! Woo! Tacos!' : ':*(' }}
+      </p>
+      <p>
+        Best Artist: {{ bestArtist }}
+      </p>
+    </div>
+
+    <!-- Submit this form using JavaScript -->
+
+    <script src="https://unpkg.com/vue"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
