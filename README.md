@@ -128,6 +128,8 @@ var app = new Vue({
 
 ## Components
 
+A Vue instance with pre-defined options.
+
 ```js
 // component definition
 Vue.component('todo-item', {
@@ -160,7 +162,7 @@ let app = new Vue({
 
 ## Constructor
 
-root Vue instance
+Create a root Vue instance.
 
 ```js
 var vm = new Vue({
@@ -168,6 +170,65 @@ var vm = new Vue({
 })
 ```
 
+Inspired by MVVM. `vm` is short for "ViewModel."
+
+![MVVM Diagram](https://upload.wikimedia.org/wikipedia/commons/8/87/MVVMPattern.png)
+
+[Constructor Options](https://vuejs.org/v2/api/)
+
+## Components
+
+A Vue instance with pre-defined options.
+
+```
+var Component = Vue.extend({
+  // options
+})
+
+var componentInstance = new Component()
+```
+
+## Properties and Methods
+
+A Vue instance proxies properties found in the `data` object. A Vue instance
+exposes instance properties and methods (prefixed by `$`).
+
 ## Lifecycle
 
-create -> mount -> update -> destroy
+`create -> mount -> update -> destroy`
+
+## Lifecycle Methods
+
+* beforeCreate
+* created
+* beforeMount
+* mounted
+* beforeUpdate
+* updated
+* beforeDestroy
+* destroyed
+
+## Template Syntax
+
+[docs](https://vuejs.org/v2/guide/syntax.html)
+
+### Interpolation
+
+```html
+<!-- message will be replaced with data.message value -->
+<span>Message: {{ message }}</span>
+<!-- do a one-time interpolation -->
+<span v-once>Message: {{ message }}</span>
+```
+
+```html
+<!-- insert HTML contained in data.rawHTML -->
+<div v-html="rawHtml"></div>
+```
+
+### Attributes
+
+```html
+<div v-bind:id="dynamicId"></div>
+<button v-bind:disabled="isButtonDisabled">Button</button>
+```
