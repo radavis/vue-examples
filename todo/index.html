@@ -20,6 +20,11 @@
           {{ todo.text }}
         </li>
       </ol>
+
+      <form v-on:submit.prevent="addTodo">
+        <label for="todoItem">New Todo Item:</label>
+        <input type="text" id="todoItem" v-model="todoText">
+      </form>
     </div>
 
     <script src="https://unpkg.com/vue"></script>
